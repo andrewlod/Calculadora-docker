@@ -1,0 +1,38 @@
+version: "3"
+   
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile-calculadora
+    command: uvicorn calculadora:app --port 8000
+    ports:
+      - "8000:8000"
+  soma:
+    build:
+      context: .
+      dockerfile: Dockerfile-soma
+    command: uvicorn soma:app --port 8100
+    ports:
+      - "8100:8100"
+  subtracao:
+    build:
+      context: .
+      dockerfile: Dockerfile-subtracao
+    command: uvicorn subtracao:app --port 8200
+    ports:
+      - "8200:8200"
+  multiplicacao:
+    build:
+      context: .
+      dockerfile: Dockerfile-multiplicacao
+    command: uvicorn multiplicacao:app --port 8300
+    ports:
+      - "8300:8300"
+  divisao:
+    build:
+      context: .
+      dockerfile: Dockerfile-divisao
+    command: uvicorn divisao:app --port 8400
+    ports:
+      - "8400:8400"
